@@ -46,7 +46,3 @@ data("penguins", package = "palmerpenguins")
 
 ```
 
-
-
-
-
