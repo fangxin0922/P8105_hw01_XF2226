@@ -51,10 +51,13 @@ data("penguins", package = "palmerpenguins")
 * The number of rows is `r nrow(penguins)` and the number of columns is `r ncol(penguins)`.
 * The mean of the flipper length variable is `r mean(pull(penguins, flipper_length_mm))`.
 
-```{r problem 2 - Make a scatterplot of flipper_length_mm (y) vs bill_length_mm (x)}
+```{r problem 2 - Make and save a scatterplot of flipper_length_mm (y) vs bill_length_mm (x)}
 
-scatterplot_flipper_bill <- ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+scatterplot_flipper_bill <- ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point() 
 
+ggsave("./P8105_hw01_XF2226_files/scatterplot_flipper_bill.png", scatterplot_flipper_bill)
 ```
+
+
 
 
