@@ -40,6 +40,13 @@ as.numeric(pull(problem1_tibble,vec_factor)) #The output tells us that in this f
 
 ```
 
+```{r problem 2 }
+
+data("penguins", package = "palmerpenguins")
+
+```
+
+
 
 
 
