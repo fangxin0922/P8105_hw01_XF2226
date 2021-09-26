@@ -46,3 +46,7 @@ data("penguins", package = "palmerpenguins")
 
 ```
 
+* The names of important variables in the penguins dataset are `r names(penguins)`. 
+* The number of rows is `r nrow(penguins)` and the number of columns is `r ncol(penguins)`.
+* The mean of the flipper length variable is `r mean(pull(penguins, flipper_length_mm))`.
+
