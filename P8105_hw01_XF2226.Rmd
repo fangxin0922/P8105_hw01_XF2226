@@ -23,13 +23,13 @@ problem1_tibble <- tibble(
 
 ```{r problem1 - Test if mean of each variable in problem1_tibble works}
 
-mean(pull(problem1_tibble,random_sample)) #mean works because this is a numeric vector
+mean(pull(problem1_tibble, random_sample)) #mean works because this is a numeric vector
 
-mean(pull(problem1_tibble,vec_logical)) #mean works because for a logical vector, TRUE is considered as 1 and FALSE is considered as 0.
+mean(pull(problem1_tibble, vec_logical)) #mean works because for a logical vector, TRUE is considered as 1 and FALSE is considered as 0.
 
-mean(pull(problem1_tibble,vec_character)) #mean does NOT work because this is a character vector
+mean(pull(problem1_tibble, vec_character)) #mean does NOT work because this is a character vector
 
-mean(pull(problem1_tibble,vec_factor)) #mean does NOT work because this is a factor vector with levels
+mean(pull(problem1_tibble, vec_factor)) #mean does NOT work because this is a factor vector with levels
 
 ```
 ```{r problem 1 - apply as.numeric to each variable in problem1_tibble, echo=TRUE, results='hide'}
@@ -41,7 +41,7 @@ as.numeric(pull(problem1_tibble,vec_factor)) #The output tells us that in this f
 
 ```
 
-```{r problem 2 }
+```{r problem 2 - load penguins dataset}
 
 data("penguins", package = "palmerpenguins")
 
@@ -50,4 +50,11 @@ data("penguins", package = "palmerpenguins")
 * The names of important variables in the penguins dataset are `r names(penguins)`. 
 * The number of rows is `r nrow(penguins)` and the number of columns is `r ncol(penguins)`.
 * The mean of the flipper length variable is `r mean(pull(penguins, flipper_length_mm))`.
+
+```{r problem 2 - Make a scatterplot of flipper_length_mm (y) vs bill_length_mm (x)}
+
+scatterplot_flipper_bill <- ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+
+```
+
 
