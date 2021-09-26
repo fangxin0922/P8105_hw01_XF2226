@@ -32,8 +32,11 @@ mean(pull(problem1_tibble,vec_factor)) #mean does NOT work because this is a fac
 
 ```
 ```{r problem 1 - apply as.numeric to each variable in problem1_tibble, echo=TRUE, results='hide'}
+as.numeric(pull(problem1_tibble,vec_logical)) #as.numeric works because for a logical vector, TRUE is considered as 1 and FALSE is considered as 0. The logical vector can be created as type numeric. This explains why the mean function works. 
 
+as.numeric(pull(problem1_tibble,vec_character)) #NAs introduced, because this a character vector, which cannot be coerced into type numeric. This explains why the mean function did not work. 
 
+as.numeric(pull(problem1_tibble,vec_factor)) #The output tells us that in this factor vector, "a" is level 1, "b" is level 2, "c" is level 3. This factor vector can be coerced into type numeric. This does not explain why the mean function did not work. However, we know that the mean function does not work because this is still a factor vector with 3 levels of "a", "b", and "c" and we cannot take the mean of a factor vector like this. 
 
 ```
 
