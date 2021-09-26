@@ -2,7 +2,7 @@
 title: "P8105_hw01_XF2226"
 author: "Xin Fang"
 date: "9/26/2021"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
