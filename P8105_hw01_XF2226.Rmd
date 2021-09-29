@@ -12,7 +12,7 @@ library(ggplot2)
 
 ```{r problem 1 - create a new data frame}
 
-set.seed(123)
+set.seed(123) 
 
 problem1_tibble <- tibble(
   random_sample = rnorm(10), #a random sample of size 10 from a standard Normal distribution
@@ -50,15 +50,16 @@ data("penguins", package = "palmerpenguins")
 
 ```
 
-* The names of important variables in the penguins dataset are `r names(penguins)`. 
+* The names of variables in the penguins dataset are `r names(penguins)`
+* The mean for penguins bill length is `r mean(pull(penguins, bill_length_mm), na.rm = TRUE)` mm, and the median is `r median(pull(penguins, bill_length_mm), na.rm = TRUE)` mm.
+* The mean penguins body mass is `r mean(pull(penguins, body_mass_g), na.rm = TRUE)` g, and the median body mass is `r median(pull(penguins, body_mass_g), na.rm = TRUE)` g.
 * The number of rows is `r nrow(penguins)` and the number of columns is `r ncol(penguins)`.
-* The mean of the flipper length variable is `r mean(pull(penguins, flipper_length_mm), na.rm = TRUE)`.
+* The mean of the flipper length variable is `r mean(pull(penguins, flipper_length_mm), na.rm = TRUE)` mm.
 
 ```{r problem 2 - Make and save a scatterplot of flipper_length_mm (y) vs bill_length_mm (x)}
-
 scatterplot_flipper_bill <- ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point() 
 
-ggsave("./P8105_hw01_XF2226_files/scatterplot_flipper_bill.png", scatterplot_flipper_bill)
+ggsave("./scatterplot_flipper_bill.png", scatterplot_flipper_bill)
 ```
 
 
