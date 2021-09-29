@@ -7,7 +7,6 @@ output: github_document
 
 ```{r setup, include=FALSE}
 library(tidyverse)
-library(ggplot2)
 ```
 
 ```{r problem 1 - create a new data frame}
@@ -57,7 +56,7 @@ data("penguins", package = "palmerpenguins")
 * The mean of the flipper length variable is `r mean(pull(penguins, flipper_length_mm), na.rm = TRUE)` mm.
 
 ```{r problem 2 - Make and save a scatterplot of flipper_length_mm (y) vs bill_length_mm (x)}
-scatterplot_flipper_bill <- ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point() 
+scatterplot_flipper_bill <- ggplot2::ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point() 
 
 ggsave("./scatterplot_flipper_bill.png", scatterplot_flipper_bill)
 ```
