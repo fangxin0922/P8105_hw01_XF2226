@@ -12,6 +12,8 @@ library(ggplot2)
 
 ```{r problem 1 - create a new data frame}
 
+set.seed(123)
+
 problem1_tibble <- tibble(
   random_sample = rnorm(10), #a random sample of size 10 from a standard Normal distribution
   vec_logical = random_sample > 0, #a logical vector indicating whether elements of the sample are greater than 0
